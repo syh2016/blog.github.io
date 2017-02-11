@@ -151,6 +151,117 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux定时任务系统-Cron" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/11/Linux定时任务系统-Cron/">Linux定时任务系统 Cron</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/11/Linux定时任务系统-Cron/" class="archive-article-date">
+  	<time datetime="2017-02-11T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux定时任务系统 Cron</p>
+<p>运行计划任务时:<br>service crond restart<br>提示：<br>crond: unrecognized service<br>安装计划任务：<br>yum -y install vixie-cron</p>
+<p>另外附计划任务的一些使用方法<br><a href="http://bbs.fengyn.com/read-htm-tid-3813-keyword-%BC%C6%BB%AE%C8%CE%CE%F1.html" target="_blank" rel="external">http://bbs.fengyn.com/read-htm-tid-3813-keyword-%BC%C6%BB%AE%C8%CE%CE%F1.html</a></p>
+<p>cron是一个linux下的定时执行工具，可以在无需人工干预的情况下运行作业。由于Cron 是Linux的内置服务，但它不自动起来，可以用以下的方法启动、关闭这个服务：　<br>　<br>　　　/sbin/service crond start //启动服务　<br>　　　/sbin/service crond stop //关闭服务　<br>　　　/sbin/service crond restart //重启服务　<br>　　　/sbin/service crond reload //重新载入配置　<br>　<br>　<br>　　　你也可以将这个服务在系统启动的时候自动启动：　<br>　<br>　　　在/etc/rc.d/rc.local这个脚本的末尾加上：　<br>　　　/sbin/service crond start　<br>　<br>　　　现在Cron这个服务已经在进程里面了，我们就可以用这个服务了，Cron服务提供以下几种接口供大家使用：　<br>　<br>　　　1.直接用crontab命令编辑　<br>　<br>　　　cron服务提供crontab命令来设定cron服务的，以下是这个命令的一些参数与说明：　<br>　<br>　　　crontab -u //设定某个用户的cron服务，一般root用户在执行这个命令的时候需要此参数　<br>　<br>　　　crontab -l //列出某个用户cron服务的详细内容　<br>　<br>　　　crontab -r //删除没个用户的cron服务　<br>　<br>　　　crontab -e //编辑某个用户的cron服务　<br>　<br>　　　比如说root查看自己的cron设置：crontab -u root -l　<br>　<br>　　　再例如，root想删除fred的cron设置：crontab -u fred -r　<br>　<br>　　　在编辑cron服务时，编辑的内容有一些格式和约定，输入：crontab -u root -e　<br>　<br>　　　进入vi编辑模式，编辑的内容一定要符合下面的格式：/1 <em> </em> <em> ls &gt;&gt; /tmp/ls.txt　<br>　<br>　　　这个格式的前一部分是对时间的设定，后面一部分是要执行的命令，如果要执行的命令太多，可以把这些命令写到一个脚本里面，然后在这里直接调用这个脚本　就可以了，调用的时候记得写出命令的完整路径。时间的设定我们有一定的约定，前面五个</em>号代表五个数字，数字的取值范围和含义如下：　<br>　<br>　　　分钟　（0-59）　<br>　<br>　　　小時　（0-23）　<br>　<br>　　　日期　（1-31）　<br>　<br>　　　月份　（1-12）　<br>　<br>　　　星期　（0-6）//0代表星期天　<br>　<br>　　　除了数字还有几个个特殊的符号就是”“、”/”和”-“、”,”，代表所有的取值范围内的数字，”/”代表每的意思,”<em>/5”表示每5个单位，”-“代表从某个数字到某个数字,”,”分开几个离散的数字。以下举几个例子说明问题：　<br>　<br>　　　每天早上6点　<br>　<br>　　　0 6 </em> <em> </em> echo “Good morning.” &gt;&gt; /tmp/test.txt //注意单纯echo，从屏幕上看不到任何输出，因为cron把任何输出都email到root的信箱了。　<br>　<br>　　　每两个小时　<br>　<br>　　　0 /2 <em> </em> echo “Have a break now.” &gt;&gt; /tmp/test.txt　<br>　<br>　　　晚上11点到早上8点之间每两个小时，早上八点　<br>　<br>　　　0 23-7/2，8 <em> </em> <em> echo “Have a good dream：）” &gt;&gt; /tmp/test.txt　<br>　<br>　　　每个月的4号和每个礼拜的礼拜一到礼拜三的早上11点　<br>　<br>　　　0 11 4 </em> 1-3 command line　<br>　<br>　　　1月1日早上4点　<br>　<br>　　　0 4 1 1 <em> command line　<br>　<br>　　　每次编辑完某个用户的cron设置后，cron自动在/var/spool/cron下生成一个与此用户同名的文件，此用户的cron信息都记录在这　个文件中，这个文件是不可以直接编辑的，只可以用crontab -e　来编辑。cron启动后每过一份钟读一次这个文件，检查是否要执行里面的命令。因此此文件修改后不需要重新启动cron服务。　<br>　<br>　　　2.编辑/etc/crontab 文件配置cron　<br>　<br>　　　cron服务每分钟不仅要读一次/var/spool/cron内的所有文件，还需要读一次/etc/crontab,因此我们配置这个文件也能运用　cron服务做一些事情。用crontab配置是针对某个用户的，而编辑/etc/crontab是针对系统的任务。此文件的文件格式是：　<br>　<br>　　　SHELL=/bin/bash　<br>　　　PATH=/sbin:/bin:/usr/sbin:/usr/bin　<br>　　　MAILTO=root //如果出现错误，或者有数据输出，数据作为邮件发给这个帐号　<br>　　　HOME=/ //使用者运行的路径,这里是根目录　<br>　　　# run-parts　<br>　　　01 </em> <em> </em> <em> root run-parts /etc/cron.hourly //每小时执行/etc/cron.hourly内的脚本　<br>　　　02 4 </em> <em> </em> root run-parts /etc/cron.daily //每天执行/etc/cron.daily内的脚本　<br>　　　22 4 <em> </em> 0 root run-parts /etc/cron.weekly //每星期执行/etc/cron.weekly内的脚本　<br>　　　42 4 1 <em> </em> root run-parts /etc/cron.monthly //每月去执行/etc/cron.monthly内的脚本　<br>　<br>　　　大家注意”run-parts”这个参数了，如果去掉这个参数的话，后面就可以写要运行的某个脚本名，而不是文件夹名了。　<br>　<br>　　　来源：chinalinuxpub</p>
+<p>////////////////////////////Linux中crontab是实现定时执行的指令，利用这个指令我们就可以定时执行某一个php文件，从而实现用PHP做Linux自动执行脚本。 　　如何用PHP作Linux自动执行脚本？　　在安装PHP的时候,会产生一个可执行文件,文件名为php.将它 copy 到 /usr/local/bin 下.在终端方式执行php程序: 　　　　php -q onlinnum.php　<br>　PHP 原本是应用在网页应用的﹐因此它会送出 HTML 的HEADER﹐但是在此我们是要将 PHP 用作 Shell Script﹐”-q”<br>就是表示不要送 出 HEADER 的意思.你可以试试看不加上 -q 的显示结果。此时你已经可以在终端方式下执行PHP 代码了。<br>　　linux命令：cron daemon 　　这是一个系统中常驻的服务，功能在于执行例行性的工作，如每天一次或每月一 次检查磁盘。cron daemon 会在每分钟检查一次排定的工作表（crontab），看看是否有要执行的指令，所有的输出会以mail寄给用户。 　　设置 crontab 　　命令：crontab -e 　　该命令呼叫vi编辑器来编辑执行的清单。例如 　　0 0 1,15 <em> </em> fsck /home 　　1 <em> </em> <em> </em> /home/myhome/printhello　　每一行代表一项排定的工作，在指令前为排定的时间，总共有5个栏位，以空格间隔，由左到右依序如下： 　　————————– 　　分钟 从00到 99 　　点钟 从0到 24 　　日 从01到31 　　月 从01到12 　　星期 从01到07，代表星期一到星期日 　　号表示”每” ，如每天执行，就在第三栏填号 　　————————–　　所以上例的两项工作是： 　　每月1号和15号检查/home 磁盘 　　每小时的第一分执行 /home/myhome/printhello 这个文件 　　查看crontab：crontab -l 　　删除crontab：crontab -r 　　我们就知道该怎么利用PHP和crontab命令作Linux自动执行脚本了。　　还需要注意什么问题？　　如果php中有使用数据库，如oracle等，执行脚本中还需export Oracle的环境设置。因为cron下的脚本执行的用户都是在没登陆状态下执行的，少了很多系统里设置的环境变量的值，在连接数据库的时候会出问题</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/11/Linux定时任务系统-Cron/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-都是-Edge-IE-缓存惹的祸" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/11/都是-Edge-IE-缓存惹的祸/">都是 Edge(IE) 缓存惹的祸</a>
+    </h1>
+  
+
+        
+        <a href="/2017/02/11/都是-Edge-IE-缓存惹的祸/" class="archive-article-date">
+  	<time datetime="2017-02-11T06:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>上周某天上班的时候，突然后端同志私戳我，</p>
+<p>当时我正研究着另一个项目的PSD，内心认真规划着整个项目的代码结构，指尖流淌出迷人的键盘音……<br>好吧，其实内心想着中午吃什么菜，喝什么汤<br>仔细一看，第一反应是，怎么可能。于是爸爸我连忙打开虚拟机中滴 Win10，等待 Win10 爷爷慢悠悠的进入待机状态。迅速点开 Edge 。<br>打开网页和 network 控制台，迅速进入调试状态。<br>一点退出登录，“啪”一个退出请求出现在 network 里，账号也随之退出。这…不是很正常嘛？？？ 哦，是第二次，于是爸爸再次登录，点击退出。嗯？点击退出。嗯？点击退出。嗯？？？<br>为什么页面只是刷新了一下而没有退出？？？<br>看看 network ，空空如也。<br>同样的操作在 Chrome 下，正常</p>
+<p>当时我的反应是——我可能打开的是假 Edge </p>
+<p>根据之前的表现（就是点完页面刷新了一下），我一开始假设 Edge 下 a 标签 href 里写 javascript:; 不起作用，还是会跳转，于是绑定的事件也没用了。但是一看代码，好像不对。来，看代码：</p>
+<p>1<br>2<br>3<br>4<br>5<br>$(‘.J_exit’).on(‘click’, function () {<br>    $.get(‘/ajax/exit.do, function () {<br>        location.reload();<br>    });<br>});<br>点击退出按钮的时候请求退出接口，后端会删除对应的 session，然后前端刷新下也没，cookie 没有对应的 session 于是会跳到登录页，从逻辑上来说，没毛病。<br>所以排除我刚刚的假设，那会不会是缓存问题呢？刚想到这里……<br>就看到两个人气势汹汹的往我这来，是后端GG和测试MM，两人过来把我团团围住，“Hey，boy，Edge 的 Bug 改的怎么样了？”<br>我当时的表情是这样的， 这好像才过去三分钟，你两怎么就过来了？？？ 爸爸才刚打开虚拟机！<br>咦，不对，重点是，为啥你两亲自跑过来了？ 宝宝很惶恐啊，有事私戳我就行了，没必要兴师动众的。由于我还没验证出 bug 原因，都是猜测，于是保守的说还母鸡呀。然后说了一堆有的没的，就走了，走了，了  哦，后台GG走之前意味深长的跟我说了句，可能是浏览器缓存问题。嘴角带着邪魅的笑，大概是这种 。<br>爸爸刚想测。于是爸爸在请求后面加了时间戳参数，第二次请求成功的发出去了。但是还是得向后台GG表示“感谢”<br>事后搜了下，发现 IE 浏览器对于没有明确表明是否缓存（强制缓存或者强制不缓存），默认的设置是“自动 automatically”，即在不关闭浏览器的情况下（同一个会话），刷新页面，对于相同url的请求并不会再次发送（即请求被缓存了），而 Edge 延续了 IE 这种“优良”的传统，坚决和主流浏览器保持“差异性”，所以会出现上面第二次请求退出接口的时候，请求都没有发出，直接就执行 location.reload() 了。</p>
+<p>最后只想 po 一张图，自己体会</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/02/11/都是-Edge-IE-缓存惹的祸/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-postName" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -243,6 +354,116 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/02/11/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-冒泡排序法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/11/冒泡排序法/">冒泡排序法</a>
+    </h1>
+  
+
+        
+        <a href="/2016/02/11/冒泡排序法/" class="archive-article-date">
+  	<time datetime="2016-02-11T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>冒泡排序法 </p>
+<ul>
+<li>思路分析：法如其名，就是像冒泡一样，每次从数组当中 冒一个最大的数出来。 </li>
+<li>比如：2,4,1 // 第一次 冒出的泡是4 </li>
+<li>2,1,4 // 第二次 冒出的泡是 2 </li>
+<li>1,2,4 // 最后就变成这样</li>
+</ul>
+<p>$arr=array(1,43,54,62,21,66,32,78,36,76,39);<br>function getpao($arr)<br>{<br>  $len=count($arr);<br>  //设置一个空数组 用来接收冒出来的泡<br>  //该层循环控制 需要冒泡的轮数<br>  for($i=1;$i&lt;$len;$i++)<br>  { //该层循环用来控制每轮 冒出一个数 需要比较的次数<br>    for($k=0;$k&lt;$len-$i;$k++)<br>    {<br>       if($arr[$k]&gt;$arr[$k+1])<br>        {<br>            $tmp=$arr[$k+1];<br>            $arr[$k+1]=$arr[$k];<br>            $arr[$k]=$tmp;<br>        }<br>    }<br>  }<br>  return $arr;<br>} </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/02/11/冒泡排序法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-快速排序法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/11/快速排序法/">快速排序法</a>
+    </h1>
+  
+
+        
+        <a href="/2016/02/11/快速排序法/" class="archive-article-date">
+  	<time datetime="2016-02-11T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>快速排序法<br>代码如下:</p>
+<p>function quick_sort($arr) {<br>    //先判断是否需要继续进行<br>    $length = count($arr);<br>    if($length &lt;= 1) {<br>        return $arr;<br>    }<br>    //如果没有返回，说明数组内的元素个数 多余1个，需要排序<br>    //选择一个标尺<br>    //选择第一个元素<br>    $base_num = $arr[0];<br>    //遍历 除了标尺外的所有元素，按照大小关系放入两个数组内<br>    //初始化两个数组<br>    $left_array = array();//小于标尺的<br>    $right_array = array();//大于标尺的<br>    for($i=1; $i&lt;$length; $i++) {<br>        if($base_num &gt; $arr[$i]) {<br>            //放入左边数组<br>            $left_array[] = $arr[$i];<br>        } else {<br>            //放入右边<br>            $right_array[] = $arr[$i];<br>        }<br>    }<br>    //再分别对 左边 和 右边的数组进行相同的排序处理方式<br>    //递归调用这个函数,并记录结果<br>    $left_array = quick_sort($left_array);<br>    $right_array = quick_sort($right_array);<br>    //合并左边 标尺 右边<br>    return array_merge($left_array, array($base_num), $right_array);<br>}</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/02/11/快速排序法/">展开全文 >></a>
         </p>
       
 

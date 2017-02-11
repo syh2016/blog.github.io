@@ -6,14 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2017/2 | 我的主页</title>
+  <title>Linux定时任务系统 Cron | 我的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我的主页">
-<meta property="og:url" content="http://yoursite.com/archives/2017/02/index.html">
+  <meta name="description" content="Linux定时任务系统 Cron
+运行计划任务时:service crond restart提示：crond: unrecognized service安装计划任务：yum -y install vixie-cron
+另外附计划任务的一些使用方法http://bbs.fengyn.com/read-htm-tid-3813-keyword-%BC%C6%BB%AE%C8%CE%CE%F1.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux定时任务系统 Cron">
+<meta property="og:url" content="http://yoursite.com/2017/02/11/Linux定时任务系统-Cron/index.html">
 <meta property="og:site_name" content="我的主页">
+<meta property="og:description" content="Linux定时任务系统 Cron
+运行计划任务时:service crond restart提示：crond: unrecognized service安装计划任务：yum -y install vixie-cron
+另外附计划任务的一些使用方法http://bbs.fengyn.com/read-htm-tid-3813-keyword-%BC%C6%BB%AE%C8%CE%CE%F1.html">
+<meta property="og:updated_time" content="2017-02-11T08:16:08.112Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的主页">
+<meta name="twitter:title" content="Linux定时任务系统 Cron">
+<meta name="twitter:description" content="Linux定时任务系统 Cron
+运行计划任务时:service crond restart提示：crond: unrecognized service安装计划任务：yum -y install vixie-cron
+另外附计划任务的一些使用方法http://bbs.fengyn.com/read-htm-tid-3813-keyword-%BC%C6%BB%AE%C8%CE%CE%F1.html">
   
     <link rel="alternative" href="/atom.xml" title="我的主页" type="application/atom+xml">
   
@@ -149,130 +159,142 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Linux定时任务系统-Cron" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Linux定时任务系统 Cron
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/11/Linux定时任务系统-Cron/" class="archive-article-date">
+
+        
+        <a href="/2017/02/11/Linux定时任务系统-Cron/" class="archive-article-date">
   	<time datetime="2017-02-11T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/11/Linux定时任务系统-Cron/">Linux定时任务系统 Cron</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Linux定时任务系统 Cron</p>
+<p>运行计划任务时:<br>service crond restart<br>提示：<br>crond: unrecognized service<br>安装计划任务：<br>yum -y install vixie-cron</p>
+<p>另外附计划任务的一些使用方法<br><a href="http://bbs.fengyn.com/read-htm-tid-3813-keyword-%BC%C6%BB%AE%C8%CE%CE%F1.html" target="_blank" rel="external">http://bbs.fengyn.com/read-htm-tid-3813-keyword-%BC%C6%BB%AE%C8%CE%CE%F1.html</a></p>
+<p>cron是一个linux下的定时执行工具，可以在无需人工干预的情况下运行作业。由于Cron 是Linux的内置服务，但它不自动起来，可以用以下的方法启动、关闭这个服务：　<br>　<br>　　　/sbin/service crond start //启动服务　<br>　　　/sbin/service crond stop //关闭服务　<br>　　　/sbin/service crond restart //重启服务　<br>　　　/sbin/service crond reload //重新载入配置　<br>　<br>　<br>　　　你也可以将这个服务在系统启动的时候自动启动：　<br>　<br>　　　在/etc/rc.d/rc.local这个脚本的末尾加上：　<br>　　　/sbin/service crond start　<br>　<br>　　　现在Cron这个服务已经在进程里面了，我们就可以用这个服务了，Cron服务提供以下几种接口供大家使用：　<br>　<br>　　　1.直接用crontab命令编辑　<br>　<br>　　　cron服务提供crontab命令来设定cron服务的，以下是这个命令的一些参数与说明：　<br>　<br>　　　crontab -u //设定某个用户的cron服务，一般root用户在执行这个命令的时候需要此参数　<br>　<br>　　　crontab -l //列出某个用户cron服务的详细内容　<br>　<br>　　　crontab -r //删除没个用户的cron服务　<br>　<br>　　　crontab -e //编辑某个用户的cron服务　<br>　<br>　　　比如说root查看自己的cron设置：crontab -u root -l　<br>　<br>　　　再例如，root想删除fred的cron设置：crontab -u fred -r　<br>　<br>　　　在编辑cron服务时，编辑的内容有一些格式和约定，输入：crontab -u root -e　<br>　<br>　　　进入vi编辑模式，编辑的内容一定要符合下面的格式：/1 <em> </em> <em> ls &gt;&gt; /tmp/ls.txt　<br>　<br>　　　这个格式的前一部分是对时间的设定，后面一部分是要执行的命令，如果要执行的命令太多，可以把这些命令写到一个脚本里面，然后在这里直接调用这个脚本　就可以了，调用的时候记得写出命令的完整路径。时间的设定我们有一定的约定，前面五个</em>号代表五个数字，数字的取值范围和含义如下：　<br>　<br>　　　分钟　（0-59）　<br>　<br>　　　小時　（0-23）　<br>　<br>　　　日期　（1-31）　<br>　<br>　　　月份　（1-12）　<br>　<br>　　　星期　（0-6）//0代表星期天　<br>　<br>　　　除了数字还有几个个特殊的符号就是”“、”/”和”-“、”,”，代表所有的取值范围内的数字，”/”代表每的意思,”<em>/5”表示每5个单位，”-“代表从某个数字到某个数字,”,”分开几个离散的数字。以下举几个例子说明问题：　<br>　<br>　　　每天早上6点　<br>　<br>　　　0 6 </em> <em> </em> echo “Good morning.” &gt;&gt; /tmp/test.txt //注意单纯echo，从屏幕上看不到任何输出，因为cron把任何输出都email到root的信箱了。　<br>　<br>　　　每两个小时　<br>　<br>　　　0 /2 <em> </em> echo “Have a break now.” &gt;&gt; /tmp/test.txt　<br>　<br>　　　晚上11点到早上8点之间每两个小时，早上八点　<br>　<br>　　　0 23-7/2，8 <em> </em> <em> echo “Have a good dream：）” &gt;&gt; /tmp/test.txt　<br>　<br>　　　每个月的4号和每个礼拜的礼拜一到礼拜三的早上11点　<br>　<br>　　　0 11 4 </em> 1-3 command line　<br>　<br>　　　1月1日早上4点　<br>　<br>　　　0 4 1 1 <em> command line　<br>　<br>　　　每次编辑完某个用户的cron设置后，cron自动在/var/spool/cron下生成一个与此用户同名的文件，此用户的cron信息都记录在这　个文件中，这个文件是不可以直接编辑的，只可以用crontab -e　来编辑。cron启动后每过一份钟读一次这个文件，检查是否要执行里面的命令。因此此文件修改后不需要重新启动cron服务。　<br>　<br>　　　2.编辑/etc/crontab 文件配置cron　<br>　<br>　　　cron服务每分钟不仅要读一次/var/spool/cron内的所有文件，还需要读一次/etc/crontab,因此我们配置这个文件也能运用　cron服务做一些事情。用crontab配置是针对某个用户的，而编辑/etc/crontab是针对系统的任务。此文件的文件格式是：　<br>　<br>　　　SHELL=/bin/bash　<br>　　　PATH=/sbin:/bin:/usr/sbin:/usr/bin　<br>　　　MAILTO=root //如果出现错误，或者有数据输出，数据作为邮件发给这个帐号　<br>　　　HOME=/ //使用者运行的路径,这里是根目录　<br>　　　# run-parts　<br>　　　01 </em> <em> </em> <em> root run-parts /etc/cron.hourly //每小时执行/etc/cron.hourly内的脚本　<br>　　　02 4 </em> <em> </em> root run-parts /etc/cron.daily //每天执行/etc/cron.daily内的脚本　<br>　　　22 4 <em> </em> 0 root run-parts /etc/cron.weekly //每星期执行/etc/cron.weekly内的脚本　<br>　　　42 4 1 <em> </em> root run-parts /etc/cron.monthly //每月去执行/etc/cron.monthly内的脚本　<br>　<br>　　　大家注意”run-parts”这个参数了，如果去掉这个参数的话，后面就可以写要运行的某个脚本名，而不是文件夹名了。　<br>　<br>　　　来源：chinalinuxpub</p>
+<p>////////////////////////////Linux中crontab是实现定时执行的指令，利用这个指令我们就可以定时执行某一个php文件，从而实现用PHP做Linux自动执行脚本。 　　如何用PHP作Linux自动执行脚本？　　在安装PHP的时候,会产生一个可执行文件,文件名为php.将它 copy 到 /usr/local/bin 下.在终端方式执行php程序: 　　　　php -q onlinnum.php　<br>　PHP 原本是应用在网页应用的﹐因此它会送出 HTML 的HEADER﹐但是在此我们是要将 PHP 用作 Shell Script﹐”-q”<br>就是表示不要送 出 HEADER 的意思.你可以试试看不加上 -q 的显示结果。此时你已经可以在终端方式下执行PHP 代码了。<br>　　linux命令：cron daemon 　　这是一个系统中常驻的服务，功能在于执行例行性的工作，如每天一次或每月一 次检查磁盘。cron daemon 会在每分钟检查一次排定的工作表（crontab），看看是否有要执行的指令，所有的输出会以mail寄给用户。 　　设置 crontab 　　命令：crontab -e 　　该命令呼叫vi编辑器来编辑执行的清单。例如 　　0 0 1,15 <em> </em> fsck /home 　　1 <em> </em> <em> </em> /home/myhome/printhello　　每一行代表一项排定的工作，在指令前为排定的时间，总共有5个栏位，以空格间隔，由左到右依序如下： 　　————————– 　　分钟 从00到 99 　　点钟 从0到 24 　　日 从01到31 　　月 从01到12 　　星期 从01到07，代表星期一到星期日 　　号表示”每” ，如每天执行，就在第三栏填号 　　————————–　　所以上例的两项工作是： 　　每月1号和15号检查/home 磁盘 　　每小时的第一分执行 /home/myhome/printhello 这个文件 　　查看crontab：crontab -l 　　删除crontab：crontab -r 　　我们就知道该怎么利用PHP和crontab命令作Linux自动执行脚本了。　　还需要注意什么问题？　　如果php中有使用数据库，如oracle等，执行脚本中还需export Oracle的环境设置。因为cron下的脚本执行的用户都是在没登陆状态下执行的，少了很多系统里设置的环境变量的值，在连接数据库的时候会出问题</p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/02/11/Linux定时任务系统-Cron/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/11/都是-Edge-IE-缓存惹的祸/" class="archive-article-date">
-  	<time datetime="2017-02-11T06:00:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/11/都是-Edge-IE-缓存惹的祸/">都是 Edge(IE) 缓存惹的祸</a>
-    </h1>
+  
+    <a href="/2017/02/11/都是-Edge-IE-缓存惹的祸/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">都是 Edge(IE) 缓存惹的祸</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+    <div class="duoshuo"></div>
   
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/11/postName/" class="archive-article-date">
-  	<time datetime="2017-02-11T02:55:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/11/postName/">postName</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/02/11/hello-world/" class="archive-article-date">
-  	<time datetime="2017-02-11T02:10:40.734Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/02/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -295,8 +317,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
