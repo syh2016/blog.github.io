@@ -8,19 +8,40 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>快速排序法 | 我的主页</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="快速排序法代码如下:
-function quick_sort($arr) {    //先判断是否需要继续进行    $length = count($arr);    if($length &amp;lt;= 1) {        return $arr;    }    //如果没有返回，说明数组内的元素个数 多余1个，需要排序    //选择一个标尺    //选择第一个元素    $base_n">
+  <meta name="description" content="//快速排序
+//待排序数组
+1$arr=array(6,3,8,6,4,2,9,5,1);
+//函数实现快速排序
+12function quick_sort($arr) &amp;#123;
+//判断参数是否是一个数组
+1if(!is_array($arr)) return false;
+//递归出口:数组长度为1，直接返回数组
+12$length=count($arr); if($length&amp;lt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速排序法">
 <meta property="og:url" content="http://yoursite.com/2016/02/11/快速排序法/index.html">
 <meta property="og:site_name" content="我的主页">
-<meta property="og:description" content="快速排序法代码如下:
-function quick_sort($arr) {    //先判断是否需要继续进行    $length = count($arr);    if($length &amp;lt;= 1) {        return $arr;    }    //如果没有返回，说明数组内的元素个数 多余1个，需要排序    //选择一个标尺    //选择第一个元素    $base_n">
-<meta property="og:updated_time" content="2017-02-11T08:15:58.558Z">
+<meta property="og:description" content="//快速排序
+//待排序数组
+1$arr=array(6,3,8,6,4,2,9,5,1);
+//函数实现快速排序
+12function quick_sort($arr) &amp;#123;
+//判断参数是否是一个数组
+1if(!is_array($arr)) return false;
+//递归出口:数组长度为1，直接返回数组
+12$length=count($arr); if($length&amp;lt">
+<meta property="og:updated_time" content="2017-02-11T08:43:18.472Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速排序法">
-<meta name="twitter:description" content="快速排序法代码如下:
-function quick_sort($arr) {    //先判断是否需要继续进行    $length = count($arr);    if($length &amp;lt;= 1) {        return $arr;    }    //如果没有返回，说明数组内的元素个数 多余1个，需要排序    //选择一个标尺    //选择第一个元素    $base_n">
+<meta name="twitter:description" content="//快速排序
+//待排序数组
+1$arr=array(6,3,8,6,4,2,9,5,1);
+//函数实现快速排序
+12function quick_sort($arr) &amp;#123;
+//判断参数是否是一个数组
+1if(!is_array($arr)) return false;
+//递归出口:数组长度为1，直接返回数组
+12$length=count($arr); if($length&amp;lt">
   
     <link rel="alternative" href="/atom.xml" title="我的主页" type="application/atom+xml">
   
@@ -176,9 +197,29 @@ function quick_sort($arr) {    //先判断是否需要继续进行    $length = 
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>快速排序法<br>代码如下:</p>
-<p>function quick_sort($arr) {<br>    //先判断是否需要继续进行<br>    $length = count($arr);<br>    if($length &lt;= 1) {<br>        return $arr;<br>    }<br>    //如果没有返回，说明数组内的元素个数 多余1个，需要排序<br>    //选择一个标尺<br>    //选择第一个元素<br>    $base_num = $arr[0];<br>    //遍历 除了标尺外的所有元素，按照大小关系放入两个数组内<br>    //初始化两个数组<br>    $left_array = array();//小于标尺的<br>    $right_array = array();//大于标尺的<br>    for($i=1; $i&lt;$length; $i++) {<br>        if($base_num &gt; $arr[$i]) {<br>            //放入左边数组<br>            $left_array[] = $arr[$i];<br>        } else {<br>            //放入右边<br>            $right_array[] = $arr[$i];<br>        }<br>    }<br>    //再分别对 左边 和 右边的数组进行相同的排序处理方式<br>    //递归调用这个函数,并记录结果<br>    $left_array = quick_sort($left_array);<br>    $right_array = quick_sort($right_array);<br>    //合并左边 标尺 右边<br>    return array_merge($left_array, array($base_num), $right_array);<br>}</p>
-
+        <pre><code> //快速排序
+//待排序数组
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$arr=array(6,3,8,6,4,2,9,5,1);</div></pre></td></tr></table></figure>
+<pre><code>//函数实现快速排序
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">function quick_sort($arr)</div><div class="line"> &#123;</div></pre></td></tr></table></figure>
+<pre><code>//判断参数是否是一个数组
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">if(!is_array($arr)) return false;</div></pre></td></tr></table></figure>
+<pre><code>//递归出口:数组长度为1，直接返回数组
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$length=count($arr);</div><div class="line"> if($length&lt;=1) return $arr;</div></pre></td></tr></table></figure>
+<pre><code>//数组元素有多个,则定义两个空数组
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$left=$right=array();</div></pre></td></tr></table></figure>
+<pre><code>//使用for循环进行遍历，把第一个元素当做比较的对象
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">for($i=1;$i&lt;$length;$i++)</div><div class="line">   &#123;</div></pre></td></tr></table></figure>
+<pre><code>//判断当前元素的大小
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">if($arr[$i]&lt;$arr[0])&#123;</div><div class="line">          $left[]=$arr[$i];</div><div class="line">      &#125;else&#123;</div><div class="line">          $right[]=$arr[$i];</div><div class="line">      &#125;</div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<pre><code>//递归调用
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$left=quick_sort($left);</div><div class="line">   $right=quick_sort($right);</div></pre></td></tr></table></figure>
+<pre><code>//将所有的结果合并
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">return array_merge($left,array($arr[0]),$right);</div><div class="line"></div><div class="line"></div><div class="line">  &#125;</div></pre></td></tr></table></figure>
+<pre><code>//调用
+</code></pre><pre><code>echo &quot;&lt;pre&gt;&quot;;
+   print_r(quick_sort($arr));
+</code></pre>
       
 
       
@@ -271,11 +312,11 @@ function quick_sort($arr) {    //先判断是否需要继续进行    $length = 
   
 <nav id="article-nav">
   
-    <a href="/2016/02/11/冒泡排序法/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/02/11/1000个苹果分成10堆/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          冒泡排序法
+          分苹果
         
       </div>
     </a>
