@@ -210,6 +210,58 @@
 
 
   
+    <article id="post-冒泡排序法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/11/冒泡排序法/">冒泡排序法</a>
+    </h1>
+  
+
+        
+        <a href="/2016/02/11/冒泡排序法/" class="archive-article-date">
+  	<time datetime="2016-02-11T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>冒泡排序法 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">function bubbleSort($numbers) </div><div class="line">&#123;</div><div class="line">    $cnt = count($numbers);</div><div class="line">    for ($i = 0; $i &lt; $cnt; $i++) </div><div class="line">    &#123;</div><div class="line">        for ($j = 0; $j &lt; $cnt - $i - 1; $j++)</div><div class="line">        &#123;</div><div class="line">            if ($numbers[$j] &gt; $numbers[$j + 1])</div><div class="line">            &#123;</div><div class="line">                $temp = $numbers[$j];</div><div class="line">                $numbers[$j] = $numbers[$j + 1];</div><div class="line">                $numbers[$j + 1] = $temp;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"> </div><div class="line">    return $numbers;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">$num = array(20, 40, 60, 80, 30, 70, 90, 10, 50, 0);</div><div class="line">var_dump(bubbleSort($num));</div></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/02/11/冒泡排序法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-1000个苹果分成10堆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -255,64 +307,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2016/02/11/1000个苹果分成10堆/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-冒泡排序法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/11/冒泡排序法/">冒泡排序法</a>
-    </h1>
-  
-
-        
-        <a href="/2016/02/11/冒泡排序法/" class="archive-article-date">
-  	<time datetime="2016-02-11T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-02-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>冒泡排序法 </p>
-<ul>
-<li>思路分析：法如其名，就是像冒泡一样，每次从数组当中 冒一个最大的数出来。 </li>
-<li>比如：2,4,1 // 第一次 冒出的泡是4 </li>
-<li>2,1,4 // 第二次 冒出的泡是 2 </li>
-<li>1,2,4 // 最后就变成这样</li>
-</ul>
-<p>$arr=array(1,43,54,62,21,66,32,78,36,76,39);<br>function getpao($arr)<br>{<br>  $len=count($arr);<br>  //设置一个空数组 用来接收冒出来的泡<br>  //该层循环控制 需要冒泡的轮数<br>  for($i=1;$i&lt;$len;$i++)<br>  { //该层循环用来控制每轮 冒出一个数 需要比较的次数<br>    for($k=0;$k&lt;$len-$i;$k++)<br>    {<br>       if($arr[$k]&gt;$arr[$k+1])<br>        {<br>            $tmp=$arr[$k+1];<br>            $arr[$k+1]=$arr[$k];<br>            $arr[$k]=$tmp;<br>        }<br>    }<br>  }<br>  return $arr;<br>} </p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/02/11/冒泡排序法/">展开全文 >></a>
         </p>
       
 
