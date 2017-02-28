@@ -6,30 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//syh2016.me">
-  <title>魔术方法总结 | 我的博客</title>
+  <title>快速排序法 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="construct()，类的构造函数
-destruct()，类的析构函数call()，在对象中调用一个不可访问方法时调用
-callStatic()，用静态方式中调用一个不可访问方法时调用get()，获得一个类的成员变量时调用
-set()，设置一个类的成员变量时调用isset()，当对不可访问属性调用isset()或empty()时调用
-unset()，当对不可访问属性调用unset()时被调用。s">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536//快速排序//待排序数组$arr=array(6,3,8,6,4,2,9,5,1);//函数实现快速排序function quick_sort($arr)&amp;#123;    //判断参数是否是一个数组    if(!is_array($arr)) return false">
 <meta property="og:type" content="article">
-<meta property="og:title" content="魔术方法总结">
-<meta property="og:url" content="//syh2016.me/2017/02/11/魔术方法总结/index.html">
+<meta property="og:title" content="快速排序法">
+<meta property="og:url" content="//syh2016.me/2015/03/12/快速排序法/index.html">
 <meta property="og:site_name" content="我的博客">
-<meta property="og:description" content="construct()，类的构造函数
-destruct()，类的析构函数call()，在对象中调用一个不可访问方法时调用
-callStatic()，用静态方式中调用一个不可访问方法时调用get()，获得一个类的成员变量时调用
-set()，设置一个类的成员变量时调用isset()，当对不可访问属性调用isset()或empty()时调用
-unset()，当对不可访问属性调用unset()时被调用。s">
-<meta property="og:updated_time" content="2017-02-12T12:26:37.878Z">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536//快速排序//待排序数组$arr=array(6,3,8,6,4,2,9,5,1);//函数实现快速排序function quick_sort($arr)&amp;#123;    //判断参数是否是一个数组    if(!is_array($arr)) return false">
+<meta property="og:updated_time" content="2017-02-28T06:53:20.637Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="魔术方法总结">
-<meta name="twitter:description" content="construct()，类的构造函数
-destruct()，类的析构函数call()，在对象中调用一个不可访问方法时调用
-callStatic()，用静态方式中调用一个不可访问方法时调用get()，获得一个类的成员变量时调用
-set()，设置一个类的成员变量时调用isset()，当对不可访问属性调用isset()或empty()时调用
-unset()，当对不可访问属性调用unset()时被调用。s">
+<meta name="twitter:title" content="快速排序法">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536//快速排序//待排序数组$arr=array(6,3,8,6,4,2,9,5,1);//函数实现快速排序function quick_sort($arr)&amp;#123;    //判断参数是否是一个数组    if(!is_array($arr)) return false">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -151,35 +139,27 @@ unset()，当对不可访问属性调用unset()时被调用。s">
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-魔术方法总结" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-快速排序法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      魔术方法总结
+      快速排序法
     </h1>
   
 
         
-        <a href="/2017/02/11/魔术方法总结/" class="archive-article-date">
-  	<time datetime="2017-02-11T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-02-11</time>
+        <a href="/2015/03/12/快速排序法/" class="archive-article-date">
+  	<time datetime="2015-03-12T08:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-03-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>construct()，类的构造函数
-</strong>destruct()，类的析构函数<br><strong>call()，在对象中调用一个不可访问方法时调用
-</strong>callStatic()，用静态方式中调用一个不可访问方法时调用<br><strong>get()，获得一个类的成员变量时调用
-</strong>set()，设置一个类的成员变量时调用<br><strong>isset()，当对不可访问属性调用isset()或empty()时调用
-</strong>unset()，当对不可访问属性调用unset()时被调用。<br><strong>sleep()，执行serialize()时，先会调用这个函数
-</strong>wakeup()，执行unserialize()时，先会调用这个函数<br><strong>toString()，类被当成字符串时的回应方法
-</strong>invoke()，调用函数的方式调用一个对象时的回应方法<br><strong>set_state()，调用var_export()导出类时，此静态方法会被调用。
-</strong>clone()，当对象复制完成时调用<br><strong>autoload()，尝试加载未定义的类
-</strong>debugInfo()，打印所需调试信息</p>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line">//快速排序</div><div class="line">//待排序数组</div><div class="line">$arr=array(6,3,8,6,4,2,9,5,1);</div><div class="line">//函数实现快速排序</div><div class="line">function quick_sort($arr)</div><div class="line">&#123;</div><div class="line">    //判断参数是否是一个数组</div><div class="line">    if(!is_array($arr)) return false;</div><div class="line">    //递归出口:数组长度为1，直接返回数组</div><div class="line">    $length=count($arr);</div><div class="line">    if($length&lt;=1) return $arr;</div><div class="line">    //数组元素有多个,则定义两个空数组</div><div class="line">    $left=$right=array();</div><div class="line">    //使用for循环进行遍历，把第一个元素当做比较的对象</div><div class="line">    for($i=1;$i&lt;$length;$i++)</div><div class="line">    &#123;</div><div class="line">        //判断当前元素的大小</div><div class="line">        if($arr[$i]&lt;$arr[0])</div><div class="line">        &#123;</div><div class="line">            $left[]=$arr[$i];</div><div class="line">        &#125;</div><div class="line">        else</div><div class="line">        &#123;</div><div class="line">            $right[]=$arr[$i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    //递归调用</div><div class="line">    $left=quick_sort($left);</div><div class="line">    $right=quick_sort($right);</div><div class="line">    //将所有的结果合并</div><div class="line">    return array_merge($left,array($arr[0]),$right);</div><div class="line"></div><div class="line">&#125;</div><div class="line">//调用</div><div class="line">echo &quot;&lt;pre&gt;&quot;;</div><div class="line">print_r(quick_sort($arr));</div></pre></td></tr></table></figure>
 
       
 
@@ -219,13 +199,24 @@ unset()，当对不可访问属性调用unset()时被调用。s">
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">基础知识</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">排序</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/算法/" class="article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -275,7 +266,7 @@ unset()，当对不可访问属性调用unset()时被调用。s">
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://syh2016.me/2017/02/11/魔术方法总结/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://syh2016.me/2015/03/12/快速排序法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -289,9 +280,18 @@ unset()，当对不可访问属性调用unset()时被调用。s">
   
 <nav id="article-nav">
   
+    <a href="/2015/05/25/1000个苹果分成10堆/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          分苹果
+        
+      </div>
+    </a>
   
-    <a href="/2016/02/11/1000个苹果分成10堆/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">分苹果</div>
+  
+    <a href="/2015/02/11/冒泡排序法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">冒泡排序法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -305,7 +305,7 @@ unset()，当对不可访问属性调用unset()时被调用。s">
   
   <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="魔术方法总结" data-title="魔术方法总结" data-url="//syh2016.me/2017/02/11/魔术方法总结/"></div>
+	<div class="ds-thread" data-thread-key="快速排序法" data-title="快速排序法" data-url="//syh2016.me/2015/03/12/快速排序法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
@@ -405,11 +405,11 @@ unset()，当对不可访问属性调用unset()时被调用。s">
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
