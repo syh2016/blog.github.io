@@ -137,6 +137,134 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-雷区计算" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/02/雷区计算/">雷区计算</a>
+    </h1>
+  
+
+        
+        <a href="/2016/01/02/雷区计算/" class="archive-article-date">
+  	<time datetime="2016-01-02T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-01-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://img.blog.csdn.net/20170227211250030?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTg2OTc4MDM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<h2 id="实现思路"><a href="#实现思路" class="headerlink" title="实现思路"></a>实现思路</h2><p>1.将点为1的坐标存入数组A中<br>2.从数组A中弹出第一个点X存入数组B中<br>3.从数组A中弹出与数组B相邻的点存入数组B中<br>4.将数组B存入数组C中并清空数组B<br>5.重复第2,3,4步<br>至此值为1的点已分组成功</p>
+<p>详细代码地址 <a href="https://github.com/syh2016/suanfa/blob/master/saolei_saunfa.php" target="_blank" rel="external">https://github.com/syh2016/suanfa/blob/master/saolei_saunfa.php</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2016/01/02/雷区计算/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-Z型字符串转换" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/26/Z型字符串转换/">Z型字符串转换</a>
+    </h1>
+  
+
+        
+        <a href="/2015/05/26/Z型字符串转换/" class="archive-article-date">
+  	<time datetime="2015-05-26T07:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="http://img.blog.csdn.net/20170228150933833?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvcXFfMTg2OTc4MDM=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="这里写图片描述"></p>
+<p><strong>实现思路：</strong></p>
+<p><strong>1.将a,b,c,d,e,f看成一个周期T并存入数组</strong><br><strong>2.根据行数计算每个周期内字符串个数num（不够一个周期补空格）</strong><br><strong>3.将第一个字符串存入数组A中</strong><br><strong>4.从第二个字符串开始将首尾字符相连压入数组A中</strong><br><strong>5.将最后一个字符压入数组A中</strong><br><strong>6.处理下一周期，重复3，4，5</strong><br><strong>7.合并每个周期生成的数组，用空格分割，转成字符串</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line">&lt;?php </div><div class="line">header(&quot;Content-type:text/html;charset=utf-8&quot;);</div><div class="line">/**</div><div class="line">* 处理最小周期内的字符串 </div><div class="line">* @author   syh</div><div class="line">* @param    array $arr 最小处理数组</div><div class="line">* @param    int $t_num 每个周期内字符串个数</div><div class="line">* @return   array</div><div class="line">*/</div><div class="line">function fun($arr,$t_num)</div><div class="line">&#123;</div><div class="line">	// 如果不够最小周期补空串</div><div class="line">	if (count($arr)&lt;$t_num) </div><div class="line">	&#123;</div><div class="line">		$arr_new=array_fill(0,$t_num-count($arr), &apos;&apos;);</div><div class="line">		$arr=array_merge($arr,$arr_new);</div><div class="line">	&#125;</div><div class="line">	$i=0;</div><div class="line">	$list[$i]=array_shift($arr);</div><div class="line">	while (count($arr)&gt;0)</div><div class="line">	&#123;</div><div class="line">		$i++;</div><div class="line">		// 合并最小周期内同行内的字符串</div><div class="line">		$list[$i]=array_shift($arr).array_pop($arr);</div><div class="line">	&#125;</div><div class="line">	return $list;</div><div class="line">&#125;</div><div class="line">/**</div><div class="line">* 主程序 </div><div class="line">* @author   syh</div><div class="line">* @param    string $str 字符串</div><div class="line">* @param    string $rows 行数</div><div class="line">* @return   array </div><div class="line">*/</div><div class="line">function main($str,$rows)</div><div class="line">&#123;</div><div class="line">	$num=2*$rows-2;//每个周期里的字符个数</div><div class="line">	$arr=array_chunk(str_split($str),$num);//分割数组</div><div class="line">	for ($i=0; $i &lt;=$rows; $i++)</div><div class="line">	&#123; 	</div><div class="line">		foreach ($arr as $key =&gt; $value)</div><div class="line">		&#123;</div><div class="line">			$list=fun($value,$num);</div><div class="line">			@$list_new[$i].=$list[$i]; </div><div class="line"></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"> 	return implode(&apos; &apos;,$list_new);</div><div class="line">&#125;</div><div class="line">$str=&apos;abcdefghijklmnopqrstuvwxyz&apos;;</div><div class="line">$str_new=main($str,4); //4行</div><div class="line">var_dump($str_new);</div><div class="line"> </div><div class="line">?&gt;</div></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2015/05/26/Z型字符串转换/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-1000个苹果分成10堆" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -290,15 +418,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">扫雷</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
              
               <li class="article-tag-list-item">
