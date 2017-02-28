@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//syh2016.me">
-  <title>Archives: 2015/5 | 我的博客</title>
+  <title>分苹果 | 我的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="我的博客">
-<meta property="og:url" content="//syh2016.me/archives/2015/05/index.html">
+  <meta name="description" content="问题：1000个苹果分成10堆，可以组合任意1-1000个数的苹果此问题是否有解？如何求解？1.首先我们必须写一个验证的程序123456789101112131415161718192021222324252627   /**  * 验证数组  * @author   syh  * @param    array $arr   * @return   bool  */    function ch">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分苹果">
+<meta property="og:url" content="//syh2016.me/2015/06/22/1000个苹果分成10堆/index.html">
 <meta property="og:site_name" content="我的博客">
+<meta property="og:description" content="问题：1000个苹果分成10堆，可以组合任意1-1000个数的苹果此问题是否有解？如何求解？1.首先我们必须写一个验证的程序123456789101112131415161718192021222324252627   /**  * 验证数组  * @author   syh  * @param    array $arr   * @return   bool  */    function ch">
+<meta property="og:updated_time" content="2017-02-28T07:52:54.163Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我的博客">
+<meta name="twitter:title" content="分苹果">
+<meta name="twitter:description" content="问题：1000个苹果分成10堆，可以组合任意1-1000个数的苹果此问题是否有解？如何求解？1.首先我们必须写一个验证的程序123456789101112131415161718192021222324252627   /**  * 验证数组  * @author   syh  * @param    array $arr   * @return   bool  */    function ch">
   
     <link rel="alternative" href="/atom.xml" title="我的博客" type="application/atom+xml">
   
@@ -135,36 +139,72 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-1000个苹果分成10堆" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2015" class="archive-year">2015</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/05/26/Z型字符串转换/" class="archive-article-date">
-  	<time datetime="2015-05-26T07:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/26/Z型字符串转换/">Z型字符串转换</a>
+    <h1 class="article-title" itemprop="name">
+      分苹果
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2015/06/22/1000个苹果分成10堆/" class="archive-article-date">
+  	<time datetime="2015-06-22T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-06-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="问题：1000个苹果分成10堆，可以组合任意1-1000个数的苹果"><a href="#问题：1000个苹果分成10堆，可以组合任意1-1000个数的苹果" class="headerlink" title="问题：1000个苹果分成10堆，可以组合任意1-1000个数的苹果"></a><strong>问题：1000个苹果分成10堆，可以组合任意1-1000个数的苹果</strong></h2><h2 id="此问题是否有解？如何求解？"><a href="#此问题是否有解？如何求解？" class="headerlink" title="此问题是否有解？如何求解？"></a>此问题是否有解？如何求解？</h2><h2 id="1-首先我们必须写一个验证的程序"><a href="#1-首先我们必须写一个验证的程序" class="headerlink" title="1.首先我们必须写一个验证的程序"></a><strong>1.首先我们必须写一个验证的程序</strong></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">   /**</div><div class="line">  * 验证数组</div><div class="line">  * @author   syh</div><div class="line">  * @param    array $arr </div><div class="line">  * @return   bool</div><div class="line">  */</div><div class="line">    function check($arr)</div><div class="line">    &#123;</div><div class="line">      rsort($arr);//逆序</div><div class="line">      $listNum=range(1,array_sum($arr));</div><div class="line">        $fun=function ($num) use ($arr)&#123;</div><div class="line">          </div><div class="line">        foreach ($arr as $key =&gt; $val)</div><div class="line">        &#123;</div><div class="line">          if($num===$val) return true;</div><div class="line">          //减去数组中比自己小的最大值 </div><div class="line">          if($num&gt;$val) $num=$num-$val;</div><div class="line">        &#125;</div><div class="line"></div><div class="line">      return false;  </div><div class="line">        &#125;;</div><div class="line">        return !in_array(false,array_map($fun,$listNum));</div><div class="line"></div><div class="line">    &#125;</div><div class="line">$arr=[1,2,4,8,16,32,64,128,256,489];//此数组为正解的一种，可以通过验证</div><div class="line">$data=check($arr);</div><div class="line">var_dump($data);//true</div></pre></td></tr></table></figure>
+<h2 id="2-遍历所有可能的组合或随机取值"><a href="#2-遍历所有可能的组合或随机取值" class="headerlink" title="2.遍历所有可能的组合或随机取值"></a><strong>2.遍历所有可能的组合或随机取值</strong></h2><p><strong>2.0非递归遍历（最原始的实现）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">   * $m个苹果分为4堆</div><div class="line">   * @author   syh </div><div class="line">   * @param    int $m苹果总数</div><div class="line">   * @return   array 验证通过后的数组</div><div class="line">   */</div><div class="line">   function test($m)</div><div class="line">   &#123;</div><div class="line">       $listAll=[];</div><div class="line">       $list=[];</div><div class="line">       $len=4;//苹果堆数</div><div class="line">       $max=function($list) use ($m,$len)&#123;</div><div class="line">          return  $m-array_sum($list)-($len-count($list))+1;</div><div class="line"></div><div class="line">       &#125;;</div><div class="line"></div><div class="line">       for ($k1=1,$max1=$max($list);$k1 &lt;=$max1; $k1++)</div><div class="line">       &#123; </div><div class="line">           $list[1]=$k1;</div><div class="line">           for ($k2=1,$max2=$max($list);$k2 &lt;=$max2 ;$k2++)</div><div class="line">           &#123; </div><div class="line">               $list[2]=$k2;</div><div class="line">               for ($k3=1,$max3=$max($list);$k3 &lt;=$max3; $k3++)</div><div class="line">               &#123;</div><div class="line">                   $list[3]=$k3;</div><div class="line">                   $list[4]=$m-array_sum($list);</div><div class="line">                   if(check($list)) </div><div class="line">                   &#123;</div><div class="line">                       $listAll[]=$list;</div><div class="line">                   &#125;</div><div class="line">                   unset($list[3]);</div><div class="line">                   unset($list[4]);</div><div class="line">               &#125;</div><div class="line">               unset($list[2]);</div><div class="line">           &#125; </div><div class="line">           unset($list[1]); </div><div class="line">        </div><div class="line">       &#125;</div><div class="line">       return $listAll;</div><div class="line"></div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p><strong>2.1第一种遍历所有可能，</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 递归实现1</div><div class="line">* @author   int $m 苹果的个数</div><div class="line">* @param    int $n 苹果堆数</div><div class="line">* @return   array</div><div class="line">*/</div><div class="line">function crateArr($m,$n)</div><div class="line">&#123;</div><div class="line">    static $list=[];//保存当前的组合</div><div class="line">    static $listAll=[];//保存所有可能的组合</div><div class="line">    static $count=0,$len;</div><div class="line">    if(($count++)===0)  $len=$n;//保存数组长度</div><div class="line">    $max=$m-array_sum($list)-($len-count($list))+1;</div><div class="line">    </div><div class="line">    for ($i=1;$i&lt;=$max;$i++)</div><div class="line">    &#123; </div><div class="line">       </div><div class="line">        $list[$n]=$i;//第$n堆苹果     </div><div class="line">        if ($n===2)</div><div class="line">        &#123;</div><div class="line">      //此处为最后一次循环</div><div class="line">            $list[$n-1]=$m-array_sum($list);//最后一堆苹果的个数</div><div class="line">            if (check($list))</div><div class="line">            &#123;</div><div class="line">                $listAll[]=$list;  //验证通过后合并        </div><div class="line">            &#125;</div><div class="line">            unset($list[$n-1]);</div><div class="line">            unset($list[$n]);</div><div class="line">        &#125;</div><div class="line">        elseif($n&gt;2)</div><div class="line">        &#123;</div><div class="line">            crateArr($m,$n-1);//递归进行 相当于for循环嵌套</div><div class="line">            unset($list[$n]);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">     </div><div class="line">    return $listAll;//返回所有符合要求的组合</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p><strong>2.2第一种遍历的次数太多，进一步优化</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> *递归实现2</div><div class="line"> * @author   syh</div><div class="line"> * @param    string $m 苹果总数</div><div class="line"> * @param    string $n 苹果堆数</div><div class="line"> * @param    string $p 第一堆苹果起始值</div><div class="line"> * @return   array</div><div class="line"> */</div><div class="line">function createArr($m,$n,$p=1)</div><div class="line">&#123;</div><div class="line">    static $list=[],$listAll=[];</div><div class="line">    static $count=0,$len;</div><div class="line">    if(($count++)===0)  $len=$n;//保存数组长度</div><div class="line">    $d=$len-($len-$n)-1;//第$n项到$len-1项的元素个数</div><div class="line">    // 假设第$n堆苹果到$len-1堆苹果数位公差为1的等差数列</div><div class="line">    //最后一堆苹果个数=苹果总和-当前堆前面的总和-当前堆到第$len-1堆等差数列的和</div><div class="line">    //第$len-1堆苹果的个数为a1+(n-1)*d 等差数列第n项公式</div><div class="line">    //当前堆到$len-1的总和为a1*n+n*(n-1)*d/2等差数列前n项和</div><div class="line">    // 数组为从小到大排序，当最后一项与倒数第二项相等时为每堆苹果的最大值，即临界点</div><div class="line">    $max=($m-array_sum($list)-$d*($d-1)/2-$len+1)/($d+1)+1;</div><div class="line"></div><div class="line">    for ($i=$p;$i&lt;=ceil($max);$i++)</div><div class="line">    &#123;  </div><div class="line">        $list[$n]=$i;     </div><div class="line">        if ($n===2)</div><div class="line">        &#123;</div><div class="line">            $list[$n-1]=$m-array_sum($list);</div><div class="line">            if(check($list))</div><div class="line">            &#123;</div><div class="line">                // 验证通过后存入数组</div><div class="line">                $listAll[]=$list;          </div><div class="line">            &#125; </div><div class="line">            unset($list[$n-1]);</div><div class="line">            unset($list[$n]);</div><div class="line">        &#125;</div><div class="line">        elseif($n&gt;2)</div><div class="line">        &#123;    </div><div class="line">            $function=__FUNCTION__; </div><div class="line">            //堆数递减，后面堆苹果最小个数=前面堆苹果个数+1</div><div class="line">            $function($m,$n-1,$i+1);</div><div class="line">            unset($list[$n]);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">    &#125;   </div><div class="line">    return $listAll;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p><strong>2.3随机取值</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function crateArr($sum,$len)</div><div class="line">   &#123; </div><div class="line">     while(1)</div><div class="line">     &#123;</div><div class="line">           $arr=[];</div><div class="line">           for ($j=1; $j&lt;=$len; $j++) </div><div class="line">           &#123; </div><div class="line">              $max=$sum-array_sum($arr)-($len-count($arr))+1;</div><div class="line">          $arr[$j]=($j==$len)?$sum-array_sum($arr):mt_rand(1,$max);           </div><div class="line">           &#125; </div><div class="line">           if(check($arr)) var_dump($arr); </div><div class="line">       &#125;</div><div class="line">   &#125;</div></pre></td></tr></table></figure>
+<p>总结：经过自己不懈的努力，程序终于实现了；但1000个苹果分成10堆计算量太大，自己的电脑最多能计算300个苹果分成10堆。<br>1,2,4,8,16,32,64,128,256,489<br>通过观察得出，符合此规律的等比数列，能组合的最大数为2的（数列长度）次方-1。通过程序验证63（2^6-1）个苹果分成6堆苹果只有一个解，小于63就会存在多解；同理，1000个苹果分成10堆，能组合的最大数为2^10-1（1023）;所以此问题存在多解，上面的数列只是其中一种解。<br><strong>2.4 进一步研究，求全部解</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 遍历后2位</div><div class="line">* 此解并不是最终解</div><div class="line">* @author   syh</div><div class="line">* @return   array</div><div class="line">*/</div><div class="line">function checkAll()</div><div class="line">&#123;</div><div class="line">    $arr=[1,2,4,8,16,32,64,128,256,489];</div><div class="line">    $list=[];</div><div class="line">    for ($i=256; $i &gt;128 ; $i--)</div><div class="line">    &#123; </div><div class="line">        array_pop($arr);</div><div class="line">        array_pop($arr);</div><div class="line">        array_push($arr, $i,745-$i);</div><div class="line">        if (check($arr))</div><div class="line">        &#123;</div><div class="line">            $list[]=implode(&apos;--&apos;,$arr);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return $list;</div><div class="line">&#125;</div><div class="line"></div><div class="line"> $data=checkAll($arr);</div><div class="line"> echo &apos;&lt;pre&gt;&apos;;</div><div class="line"> print_r($data);</div><div class="line"> Array</div><div class="line">(</div><div class="line">    [0] =&gt; 1--2--4--8--16--32--64--128--256--489</div><div class="line">    [1] =&gt; 1--2--4--8--16--32--64--128--255--490</div><div class="line">    [2] =&gt; 1--2--4--8--16--32--64--128--254--491</div><div class="line">    [3] =&gt; 1--2--4--8--16--32--64--128--253--492</div><div class="line">    [4] =&gt; 1--2--4--8--16--32--64--128--252--493</div><div class="line">    [5] =&gt; 1--2--4--8--16--32--64--128--251--494</div><div class="line">    [6] =&gt; 1--2--4--8--16--32--64--128--250--495</div><div class="line">    [7] =&gt; 1--2--4--8--16--32--64--128--249--496</div><div class="line">    [8] =&gt; 1--2--4--8--16--32--64--128--248--497</div><div class="line">    [9] =&gt; 1--2--4--8--16--32--64--128--247--498</div><div class="line">    [10] =&gt; 1--2--4--8--16--32--64--128--246--499</div><div class="line">    [11] =&gt; 1--2--4--8--16--32--64--128--245--500</div><div class="line">)</div></pre></td></tr></table></figure>
+<p>遍历后3位有42种解,遍历后4位电脑又罢工了 </p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>您的支持是我努力的动力！<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -176,57 +216,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://syh2016.me/2015/06/22/1000个苹果分成10堆/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2015/05/25/1000个苹果分成10堆/" class="archive-article-date">
-  	<time datetime="2015-05-25T06:19:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2015-05-25</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2015/05/25/1000个苹果分成10堆/">分苹果</a>
-    </h1>
+    <a href="/2015/06/26/Z型字符串转换/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Z型字符串转换
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/06/05/魔术方法总结/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">魔术方法总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+  
+  <div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="1000个苹果分成10堆" data-title="分苹果" data-url="//syh2016.me/2015/06/22/1000个苹果分成10堆/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -249,8 +347,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -311,11 +409,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">排序</a>
+                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">基础知识</a>
+                <a href="javascript:void(0)" class="js-tag color3">排序</a>
               </li>
             
             <div class="clearfix"></div>
